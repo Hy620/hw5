@@ -1,0 +1,360 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+@font-face {
+    font-family: "mingChao";
+    src: url("../fonts/mingChao.otf");
+}
+
+@font-face {
+    font-family: "fangSong";
+    src: url("../fonts/fangSong.otf");
+}
+
+@font-face {
+    font-family: "Merienda-Regular";
+    src: url("../fonts/Merienda-Regular.ttf");
+}
+
+
+html body {
+	width:100%;
+	height:100%;
+	padding:0;
+	margin:0;
+	overflow-x:hidden;
+}
+
+body {
+	line-height: 1;
+	min-height:100%; font-size:20px;
+	font-family:"Merienda-Regular";
+	background: #eeeeee;
+	/*
+	-webkit代表谷歌【chrome】/苹果【safari】内核识别码
+	-moz代表火狐【firefox】内核识别码
+	-o代表欧朋【opera】内核识别码
+	-ms代表【ie】内核识别码*/
+	background: -webkit-linear-gradient(top, #eeeeee, #cccccc 100%);
+	background: -moz-linear-gradient(top, #eeeeee, #cccccc 100%);
+	background: -o-linear-gradient(top, #eeeeee, #cccccc 100%);
+	background: -ms-linear-gradient(top, #eeeeee, #cccccc 100%);
+	background: linear-gradient(top, #eeeeee, #cccccc 100%);
+	/* background-attachment: 捲動時背景圖的位置是否改變
+	scroll: 預設值，背景圖會隨著外圍頁面滾動而移動
+	fixed: 不管內外怎麼滾，背景不會動
+	local: 內外部區塊內滾動，背景圖都會跟著移動 */
+	background-attachment:fixed;
+}
+
+h1 {
+	font-size:60px;
+	margin:0;
+}
+
+h2 {
+	color:inherit;
+	font-size:18px;
+	margin:32px 0 16px 0;
+}
+
+h3 {
+	color:#333;
+	font-size:23em;
+	margin:16px 0;
+}
+
+h4 {
+	color:#444;
+	font-size:18em;
+	margin:16px 0;
+}
+
+.skrollable {
+	/* First-level skrollables are positioned relative to window */
+	position:fixed;
+
+	/* Skrollables by default have a z-index of 100 in order to make it easy to position elements in front/back without changing each skrollable */
+	z-index:100;
+}
+
+.skrollr-mobile .skrollable {
+	/* May cause issues on Android default browser (see #331 on GitHub). */
+	position:absolute;
+}
+
+.skrollable .skrollable {
+	/* Second-level skrollables are positioned relative their parent skrollable */
+	position:absolute;
+}
+
+.skrollable .skrollable .skrollable {
+	/* Third-level (and below) skrollables are positioned static */
+	position:static;
+}
+
+.nicescroll-rails{
+	display:none;
+}
+
+
+/* Page1: Mountain */
+.page1{ 
+	/*background共6個參數 8個值 按順序
+	background-color
+	background-image
+	background-attachment
+	background-repeat
+	background-poition
+	background-size*/
+	background:url(../images/bg1.png) no-repeat center; 
+	position:fixed; 
+	width:100%; 
+	height:100%; 
+	left:0; 
+	top:0;
+}
+
+.page1 h1{ 
+	position:absolute; 
+	width:100%; 
+	left:0; 
+	top:50%; 
+	margin-top:-40px; 
+	font-size:44px; 
+	color:#fff; 
+	z-index:56; 
+	text-align:center; 
+	font-weight:normal;
+}
+.p1{ 
+	background:url(../images/bg_1.png) no-repeat right ; 
+	background-size:cover; 
+	position:absolute; 
+	left:0;  
+	width:59%; 
+	top:0; 
+	height:100%;
+}
+.p2{ background:url(../images/bg_2.png) no-repeat right ; 
+	background-size:cover; 
+	position:absolute; 
+	left:0;  
+	width:64%; 
+	top:0; 
+	height:100%; 
+}
+
+.p3{ 
+	background:url(../images/bg_3.png) 
+	no-repeat left ; 
+	background-size:cover; 
+	position:absolute; 
+	right:0;  
+	width:55%; 
+	top:0; 
+	height:100%;
+}
+.p4{ 
+	background:url(../images/bg_4.png) no-repeat left; 
+	background-size:cover; 
+	position:absolute; right:0;  
+	width:50%; 
+	top:0; 
+	height:100%;
+}
+
+/* Page2: Gradient */
+.page2{  
+	background-image: linear-gradient(#01163d, #888eda); 
+	position:fixed; 
+	width:100%; 
+	height:100%; 
+	left:0; 
+	top:0;
+}
+
+
+.page2 .top{ 
+	width:100%; 
+	line-height:60px; 
+	font-size:24px; 
+	font-weight:bold; 
+	background:#020931; 
+	text-align:center;
+}
+.page2 .down{
+	text-shadow: 0em 0em 0.2em rgba(0,0,0,0.5); 
+	font-size:60px; 
+	color:#fff;  
+	position:absolute; 
+	width:100%; 
+	left:0; 
+	top:50%; 
+	margin-top:-30px;
+	text-align:center;
+}
+
+/* Page3: Bridge */
+.page3{ 
+	position:fixed; 
+	width:100%; 
+	height:100%; 
+	left:0; 
+	top:0;
+}
+
+.page3 .left{ 
+	background:url(../images/bg2_3.png) no-repeat ;
+	background-size:cover; 
+	position:absolute; 
+	left:0;  
+	width:50%; 
+	top:0; 
+	height:100%; 
+}
+.page3 .right{ 
+	background:url(../images/bg2_4.png) no-repeat ;  
+	background-size:cover; 
+	position:absolute; 
+	right:0;  
+	width:50%; 
+	top:0; 
+	height:100%;
+}
+
+.page3 h1{ 
+	font-size:60px; 
+	position:absolute; 
+	left:100px; 
+	bottom:100px; 
+	z-index:577; 
+	color:#fff;
+}
+
+
+/*漸變轉場*/
+.hd{
+	background-image: linear-gradient(to left, rgba(114,75,58,1),  rgba(255,214,166,1),  rgba(184,199,222,0)); 
+	position:fixed; 
+	left:0; 
+	top:0; 
+	width:200%; 
+	height:100%;
+}
+
+/* Page4: Waves */
+.page4{  
+	position:fixed;
+	width:100%; 
+	height:100%; 
+	left:0; 
+	top:0;
+}
+
+.page4 .top{ 
+	width:100%; 
+	line-height:60px; 
+	position:absolute; 
+	top:0; 
+	z-index:556; 
+	left:0; 
+	font-size:24px; 
+	font-weight:bold; 
+	background:#fff; 
+	text-align:center;
+}
+.page4 .top span{ 
+	position:absolute; 
+	width:40px; 
+	display:block; 
+	left:20px ; 
+	top:20px;
+/*	border-bottom:#006699 solid 3px;*/
+}
+.page4 .top span:after{ 
+	content:'' ; 
+	width:40px; 
+	display:block; 
+	height:0; 
+	margin:8px 0; 
+	border-bottom:#006699 solid 3px;
+}
+.page4 .top span:before{ 
+	content:'' ; 
+	width:40px; 
+	display:block; 
+	height:0; 
+	border-bottom:#006699 solid 3px;
+}
+.page4 .left{ 
+	background:url(../images/bg3_4.png) #fff no-repeat right bottom ;  
+	z-index:555; 
+	background-size:cover; 
+	position:absolute; 
+	left:0;  
+	width:30.1%; 
+	top:0; 
+	height:100%;
+}
+.page4 .left span{ 
+	font-size:200px; 
+	color:#003366; 
+	display:block; 
+	margin:100px 0 0 100px;
+}
+
+
+.page4 .left .more{ 
+	background:#003366; 
+	display:inline-block; 
+	position:absolute; 
+	top:570px; 
+	font-size:30px; 
+	color:#fff; 
+	text-decoration:none; 
+	margin:0 auto; 
+	padding:15px 40px;
+}
+.page4 .video{ 
+	width:100%; 
+	position:absolute; 
+	left:0; 
+	height:100%; 
+	top:0;
+}
+.morediv{ 
+	margin-left:120px;
+	margin-top:100px;
+}
+
+.end{ 
+	background:url(../images/bg3_3.png) no-repeat center top; 
+	background-size:100% auto; 
+	text-align:center; 
+	width:100%; 
+	height:80%; 
+	position:absolute; 
+	bottom:0; 
+}
+.end h2{ 
+	position:absolute; 
+	left:0; 
+	width:100%; 
+	bottom:5%; 
+	text-align:center; 
+	font-size:48px;
+}
+.end p{ 
+	position:absolute; 
+	left:0; 
+	width:100%;
+	bottom:4%;  
+	text-align:center;
+}
