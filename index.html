@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+    <title>HW5</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/skrollr.min.js"></script>
+</head>
+
+<body>
+<!--page1: Mountain-->
+<div class="page1" data-2000="top:0%;"  data-3000="top:-100%;">
+    <!-- 改變圖案位置 -->
+    <div class="p1" data-0="transform:translate(0px,0px)"  data-1000="transform:translate(-400px,0px)"  data-1500="transform:translate(-400px,0px)" data-2000="transform:translate(0px,0px)"></div>
+    <div class="p2" data-0="transform:translate(0px,0px)"  data-1000="transform:translate(-350px,0px)" data-1500="transform:translate(-350px,0px)"  data-2000="transform:translate(0px,0px)"></div>
+    <div class="p3" data-0="transform:translate(0px,0px)"  data-1000="transform:translate(400px,0px)" data-1500="transform:translate(400px,0px)"  data-2000="transform:translate(0px,0px)"></div>
+    <div class="p4" data-0="transform:translate(0px,0px)"  data-1000="transform:translate(350px,0px)" data-1500="transform:translate(350px,0px)"  data-2000="transform:translate(0px,0px)"></div>
+    <!-- 改變文字大小 -->
+    <h1 style="font-family: mingChao; line-height: 140%;"  data-0="transform: scale(1.3);opacity:1" data-1400="transform: scale(2.3);opacity:0">年來鞍馬困塵埃,<br></h1>
+    <h1 style="font-family: mingChao; line-height: 140%;"  data-1400="transform: scale(2.3);opacity:0" data-2000="transform: scale(1.3);opacity:1">賴有青山豁我懷.<br></h1>
+</div>
+
+<!-- Page2: Gradient -->
+<div class="page2" data-2000="top:100%;" data-3000="top:0%;"  data-3500="top:0%;"  data-4500="top:-100%;">
+    <div class="top">
+        <a href="#" data-2000="left:10%"  data-3000="left:88%" style="color: #eee; opacity: 60%;">Back To Top</a>
+    </div>
+    <div class="down" data-2500="transform: scale(2);opacity:0"  data-3000="transform: scale(1);opacity:1"  data-3500="transform: scale(1);opacity:0.5;" style="font-family: fangSong, Merienda-Regular; line-height: 120%; margin-top: -200px;">向<br>下<br>滑<br>動
+      <p>⇂</p>
+    </div>
+</div>
+
+<!-- Page3: Bridge -->
+<div class="page3" data-3500="top:100%;" data-4500="top:0%;"  data-7500="top:0%;" data-8000="top:-100%;">
+    <h1 style="font-family: mingChao; line-height: 140%; opacity: 80%;" data-5000="left:10%; opacity:0.8" data-5500="left:44%; opacity:0">一道殘陽鋪水中，</h1>
+    <h1 style="font-family: mingChao; line-height: 140%; opacity: 80%;" data-5500="left:44%; opacity:0" data-6000="left:66%; opacity:0.8">半江瑟瑟半江紅。</h1>
+  <div class="left" data-5000="background-position:0% 0%"  data-6000="background-position:100% 0%" ></div>
+  <div class="right" data-5000="background-position:100% 0% "  data-6000="background-position:0% 0%" ></div>
+</div>
+<div class="hd" data-6000="left:100%" data-7000="left:-100%"  data-8000="left:-100%" data-9000="left:100%"  ></div>
+
+<!-- Page4: Waves -->
+<div class="page4">
+    <div class="top" data-10000="transform:translate(0px,0px)"  data-11000="transform:translate(0,-100px)" style="font-family: fangSong; color:#003366; ">
+        <a href="#"><span></span></a>
+        東&thinsp;臨&thinsp;碣&thinsp;石&thinsp;，&thinsp;以&thinsp;觀&thinsp;滄&thinsp;海&thinsp;。
+    </div>
+    <div class="video" data-11000="transform:translate(0px,0px)"  data-11500="transform:translate(0px,-160px)">
+        <video src="images/bg3.mp4" poster="images/bg3.png" controls="controls"> your browser does not support the video tag </video>
+    </div>
+
+    <div class="left"  data-10000="transform:translate(0px,0px)"  data-11000="transform:translate(-700px,0)"> 
+        <span  data-10000="transform:translate(0px,0px)"  data-10500="transform:translate(-700px,0px)" style="font-family: mingChao;">觀<br>海</span>
+        <div class="morediv" >
+            <a href="#" class="more">Back to Top</a></div>
+        </div>
+    <div class="end"  data-11000="transform:translate(0px,500px)"  data-11500="transform:translate(0px,0px)">
+        <h2 style="margin-bottom: 50px; color:#003366; opacity: 0.8">The End</h2>
+      	<p>H.Yang © 2021</p>
+    </div>
+</div>
+
+
+<script src="js/jquery.min.js"></script>
+<!-- 滚动条美化插件 -->
+<script src="http://www.htmlqietu.com/case/150/static/js/jquery.nicescroll.js"></script>
+
+<script>
+
+var skrollr_obj = skrollr.init();//初始化
+	
+var video = document.querySelector("video");//定義新變量
+   $(document).scroll(function() {
+   var scroH = $(document).scrollTop(); //定義新函數
+    if(scroH >1000){  //距离顶部大于1000时自動播放視頻
+    video.play();
+    }
+});
+
+//对滚动条的颜色和触摸滚动模式进行的修改
+$('body').niceScroll({
+    cursorcolor: "#02a475",//#CC0071 光标颜色
+    cursoropacitymax: 1, //改变不透明度非常光标处于活动状态（scrollabar“可见”状态），范围从1到0
+    touchbehavior: false, //使光标拖动滚动像在台式电脑触摸设备
+    cursorwidth: "10px", //像素光标的宽度
+    cursorborder: "0", // 游标边框css定义
+    cursorborderradius: "0px",//以像素为光标边界半径
+    autohidemode: true //是否隐藏滚动条
+});
+
+
+</script>
+</body>
+</html>
